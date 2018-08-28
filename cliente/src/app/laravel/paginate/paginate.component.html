@@ -1,0 +1,7 @@
+<nav>
+  <ul class="pagination">
+    <li class="page-item" *ngFor="let page of pages" [ngClass]="{'active': activePage == page}">
+      <a href="" (click)="changePage($event, page)" class="page-link">{{ page }}</a>
+    </li>
+  </ul>
+</nav>

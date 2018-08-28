@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <h5 class="card-title">Produtos</h5>
+      </div>
+      <div class="col-4 mb-1">
+        <app-search [resource]="'products'" (onSearch)="searched($event)"></app-search>
+      </div>
+    </div>
+
+    <table class="table table-hover table-bordered">
+      <caption>Lista de produtos</caption>
+      <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>título</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products.data">
+          <td>{{ product.id }}</td>
+          <td>{{ product.title }}</td>
+          <td class="text-right">
+            //
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <app-paginate [resource]="'products'" [totalPage]="products.last_page" (onChangePage)="updateData($event)" [activePage]="products.current_page"></app-paginate>
+
+
+  </div>
+</div>

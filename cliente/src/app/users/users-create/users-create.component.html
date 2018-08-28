@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Novo usuário</h5>
+
+    <form (submit)="save()">
+      <div class="form-group">
+        <label for="user-name">Nome</label>
+        <input name="name" type="text" class="form-control" id="user-name" [(ngModel)]="user.name" placeholder="Seu nome...">
+      </div>
+      <div class="form-group">
+        <label for="user-email">Email</label>
+        <input name="email" type="email" class="form-control" id="user-email" [(ngModel)]="user.email" placeholder="Seu email...">
+      </div>
+      <div class="form-group">
+        <label for="user-name">Senha</label>
+        <input name="password" type="password" class="form-control" id="user-password" [(ngModel)]="user.password" placeholder="Sua senha...">
+      </div>
+
+      <input type="submit" value="Salvar" class="btn btn-primary">
+    </form>
+
+    <hr>
+
+    <div class="btn-group">
+      <a [routerLink]="['/users']" class="btn btn-secondary">voltar</a>
+    </div>
+  </div>
+</div>
